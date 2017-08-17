@@ -1,4 +1,504 @@
 @import "other/mixins";
+@import "other/sprite";
 div{
 	box-sizing: border-box;
+}
+/*---fonts
+	Gotham Ultra;
+	Roboto Mono, Roboto{
+		100-Thin
+		300-Light
+		400-regular
+		500-Medium
+		700-Bold
+	}
+---fonts*/
+body{
+	color: #000;
+}
+
+
+
+#lp_gamescom { 
+	background-color: map-get($colors, yellow);
+	background-image: url(../images/mainWrapperBg.png);
+	background-position: 44.4% 0%;
+	#header { 
+		width: 1400px;
+		margin: 0 auto;
+		position: relative;
+		.legionLogo { 
+			position: absolute;
+			right: 20px;
+			top: 15px;
+			@include sprite($s-legionLogo);
+			cursor: pointer;
+			z-index: 1;
+		}
+
+		.socialLinksBlock { 
+			z-index: 1;
+			position: absolute;
+			right: 20px;
+			bottom: 27px;
+			.item{
+				border-radius: 2px;
+				cursor: pointer;
+				background: #fff;
+				width: 50px;
+				height: 50px;
+				transition: all 0.2s ease;
+				position: relative;
+				margin-top: 50px;
+				.icon { 
+					position: absolute;
+					top: 0;
+					left: 0;
+					bottom: 0;
+					right: 0;
+					margin: auto;
+					fill: map-get($colors, yellow);
+					width: 40px;
+					height: 40px;
+				}
+				&:hover{
+					background: map-get($colors, red);
+				}
+			}
+
+		}
+
+		.mainTitle { 
+			width: 1000px;
+			margin: 0 auto;
+			font-family: "Gotham Ultra";
+			text-align: center;
+			text-transform: uppercase;
+			padding-top: 126px;
+	    padding-left: 20px;
+	    padding-bottom: 93px;
+			.t1 { 
+				color: map-get($colors, red);
+				font-size: 98px;
+				line-height: 80px;
+			}
+
+			.t2 { 
+				display: inline-block;
+				font-size: 50px;
+				line-height: 40px;
+				color: map-get($colors, red);
+				position: relative;
+				margin-top: -3px;
+				&:before,&:after{
+					top: 45%;
+					transform: translateY(-50%);
+					content: '';
+					position: absolute;
+					width: 63px;
+					height: 9px;
+					box-sizing: content-box;
+					border-top: 1px solid map-get($colors, red);
+					border-bottom: 1px solid map-get($colors, red);
+				}
+				&:before{
+					left: -76px;
+				}
+				&:after{
+					right: -73px;
+				}
+			}
+
+			.t3 { 
+				font-size: 98px;
+				line-height: 80px;
+				color: #000;
+		    margin-top: -6px;
+			}
+		}
+	}
+
+	#contentWrapper { 
+		background-color: #2f2d2d;
+		width: 1400px;
+		margin: 0 auto;
+		padding: 35px 20px 0;
+		.title{
+			font-family: "Gotham Ultra";
+			text-align: center;
+			font-size: 35px;
+			line-height: 35px;
+			text-transform: uppercase;
+			color: #fff;
+		}
+		.coin { 
+			@include sprite($s-coin);
+		}
+
+		.anonsText { 
+			text-align: center;
+			font-family: "Gotham Ultra";
+			font-size: 20px;
+			line-height: 24px;
+			text-transform: uppercase;
+			padding: 0 10px;
+			p { 
+				margin-top: 24px;
+				color: #fff;
+				&:first-child{
+					margin-top: 0;
+				}
+			}
+			a{
+				position: relative;
+				color: map-get($colors, red);
+				&:after{
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					content: '';
+					width: 100%;
+					height: 1px;
+					background: map-get($colors, red);
+				}				
+			}
+		}
+		
+		.title1{
+			margin: 70px 0 30px;
+			padding-left: 16px;
+		}
+
+		.imagesTopRow { 
+			font-size: 0;
+			text-align: center;
+			position: relative;
+	    text-align: justify;
+	    text-justify: newspaper;
+	    zoom: 1;
+	    text-align-last: justify;
+	    font-size: 0;
+	    &:after{
+		    width: 100%;
+		    height: 0px;
+		    visibility: hidden;
+		    overflow: hidden;
+		    content: '';
+		    display: inline-block;
+	    }
+			>span{
+				display: inline-block;
+				vertical-align: top;
+				position: relative;
+			}
+			.kover { 
+				@include sprite($s-topRow_kover);
+		    margin-top: 45px;
+		    margin-left: -7px;
+			}
+
+			.yshi1 { 
+				@include sprite($s-topRow_yshi1);
+		    margin-top: 16px;
+		    margin-left: -9px;
+			}
+
+			.klava { 
+				@include sprite($s-topRow_klava);
+		    margin-top: 2px;
+		    margin-left: 5px;
+			}
+
+			.yshi2 { 
+				@include sprite($s-topRow_yshi2);
+				margin-top: 14px;
+			}
+
+			.mouse { 
+				@include sprite($s-topRow_mouse);
+				margin-top: 37px;
+			}
+		}
+
+		.userRow { 
+			position: relative;
+	    text-align: justify;
+	    text-justify: newspaper;
+	    zoom: 1;
+	    text-align-last: justify;
+	    font-size: 0;
+	    margin-top: 43px;
+	    >div{
+	    	display: inline-block;
+	    	vertical-align: top;
+	    }
+	    &:after{
+		    width: 100%;
+		    height: 0px;
+		    visibility: hidden;
+		    overflow: hidden;
+		    content: '';
+		    display: inline-block;
+	    }
+			.gl { 
+				display: inline-block;
+				vertical-align: top;
+				font-family: "Gotham Ultra";
+				font-size: 30px;
+				line-height: 80px;
+				color: #000;
+				width: 338px;
+				text-align: center;
+				text-align-last: center;
+				background: #fff;
+				text-transform: uppercase;
+				padding-right: 14px;
+    		letter-spacing: 1px;
+			}
+			.gn{
+				letter-spacing: 1px;
+				display: inline-block;
+				vertical-align: top;
+				font-family: "Gotham Ultra";
+				font-size: 30px;
+				line-height: 80px;
+				color: #000;
+				width: 338px;
+				text-align: center;
+				text-align-last: center;
+				background: #fff;
+				text-transform: uppercase;		    
+			}
+
+			.userAvaterBlock { 
+				width: 300px;
+				margin-left: 42px;
+				text-align-last: center;
+				text-align: center;
+				.userIcon { 
+					@include sprite($s-userAvatar);
+			    margin: -4px auto 11px;
+				}
+
+				.name { 
+					text-transform: uppercase;
+					font-size: 24px;
+					line-height: 24px;
+					color: #fff;
+					font-family: "Gotham Ultra";
+				}
+			}
+
+			.userCoinsBlock { 
+				width: 300px;
+				margin-right: 42px;
+				text-align-last: center;
+				text-align: center;
+				.coin { 
+			    margin: -2px auto 7px;
+				}
+
+				.text { 
+					text-transform: uppercase;
+					font-size: 24px;
+					line-height: 24px;
+					color: #fff;
+					font-family: "Gotham Ultra";
+				}
+			}
+		}
+
+		.colsBlock { 
+			&:after{
+				content: '';
+				clear: both;
+				display: table;
+			}
+			.lc { 
+				width: 920px;
+				float: left;
+				.news-item-lc { 
+					float: left;
+					position: relative;
+					margin-left: 20px;
+					left: -20px;
+					width: 440px;
+					overflow: hidden;
+					background: #fff;
+					border-radius: 5px;
+					margin-bottom: 20px;
+					border-radius: 6px;
+					.prevImgBlock { 
+						width: 380px;
+						height: 229px;
+						margin: 0 auto;
+						position: relative;
+						overflow: hidden;
+						.item { 
+							width: 100%;
+							height: 100%;
+							img { 
+								position: absolute;
+								left: 50%;
+								top: 50%;
+								transform: translateX(-50%) translateY(-50%);
+								margin: auto;
+							}
+						}
+					}
+
+					.name { 
+						width: 380px;
+						margin: 0 auto;
+						font-family: "Roboto";
+						color: map-get($colors, text);
+						font-size: 28px;
+						text-transform: uppercase;
+						line-height: 28px;
+					}
+
+					.text { 
+						width: 380px;
+						margin: 0 auto;
+						font-family: "Roboto";
+						color: map-get($colors, text);
+						font-size: 16px;
+						line-height: 20px;
+					}
+
+					.date { 
+						width: 380px;
+						margin: 0 auto;
+						text-align: right;
+						font-family: "Roboto Mono";
+						font-size: 20px;
+						line-height: 20px;
+					}
+
+					.button { 
+						background: map-get($colors, red);
+						position: relative;
+						color: #fff;
+						font-family: "Roboto";
+						font-weight: 700;
+						font-size: 21px;
+						line-height: 63px;
+						height: 63px;
+						.buttonText { 
+							
+						}
+
+						.time { 
+						
+						}
+
+						.coin { 
+							position: absolute;
+							right: 0;
+							top: 50%;
+							transform-origin: 50% 50%;
+							transform: translateY(-50%);
+						}
+					}
+				}
+			}
+
+			.rc { 
+				float: left;
+				width: 440px;
+				font-family: "Roboto";
+				.news-item-rc { 
+					overflow: hidden;
+					color: #fff;
+					cursor: pointer;
+					.date { 
+						font-size: 10px;
+						line-height: 12px;
+
+					}
+
+					.logo { 
+						@include sprite($s-gamescomNewsLogo);
+						float: left;
+						margin-right: 5px;
+					}
+
+					.name { 
+						font-size: 14px;
+						line-height: 16px;
+						text-transform: uppercase;
+					}
+				}
+			}
+		}
+		.colsBlock1{
+			margin-top: 24px;
+		}
+
+
+		.recomendItemsRow { 
+			overflow: hidden;
+			.item { 
+				width: 440px;
+				height: 328px;
+				margin-left: 20px;
+				float: left;
+				overflow: hidden;
+				cursor: pointer;
+				position: relative;
+				&:first-child{
+					margin-left: 0;
+				}
+				img { 
+					z-index: 0;
+					position: absolute;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					top: 0;
+					margin: auto;
+				}
+				&:after{
+					content: '';
+					transition: opacity 0.2s ease;
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					background: #000000;
+					opacity: 0;
+				}
+				.name { 
+					position: absolute;
+					z-index: 3;
+					font-size: 53px;
+					top: 50%;
+					left: 50%;
+					transform-origin: 50% 50%;
+					transform: translateX(-50%) translateY(-40%);
+					opacity: 0;
+					transition: all 0.2s ease;
+				}
+				&:hover{
+					&:after{
+						opacity: 0.5;
+					}
+					.name{
+						opacity: 1;
+						transform: translateX(-50%) translateY(-50%);
+					}
+				}
+			}
+		}
+
+		.footer { 
+
+			.gameGuruLogo { 
+
+			}
+
+			.legionLogo { 
+				@include sprite($s-legionLogo_yellow);
+			}
+		}
+	}
 }

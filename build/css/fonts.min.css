@@ -1,4 +1,87 @@
 @font-face {
+  font-family: 'Gotham Ultra';
+  src: url('../fonts/gothamUltra/GOTHAM-ULTRA.otf');
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/roboto/Roboto-Thin.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 100;
+    text-rendering: optimizeLegibility;
+}
+
+// @font-face {
+//     font-family: 'Roboto';
+//     src: url('../fonts/roboto/Roboto-ThinItalic.ttf') format('truetype');
+//     font-style: italic;
+//     font-weight: 100;
+//     text-rendering: optimizeLegibility;
+// }
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/roboto/Roboto-Light.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+}
+
+// @font-face {
+//     font-family: 'Roboto';
+//     src: url('../fonts/roboto/Roboto-LightItalic.ttf') format('truetype');
+//     font-style: italic;
+//     font-weight: 300;
+//     text-rendering: optimizeLegibility;
+// }
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/roboto/Roboto-Regular.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 400;
+    text-rendering: optimizeLegibility;
+}
+
+// @font-face {
+//     font-family: 'Roboto';
+//     src: url('../fonts/roboto/Roboto-Italic.ttf') format('truetype');
+//     font-style: italic;
+//     font-weight: 400;
+//     text-rendering: optimizeLegibility;
+// }
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/roboto/Roboto-Medium.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 500;
+    text-rendering: optimizeLegibility;
+}
+
+// @font-face {
+//     font-family: 'Roboto';
+//     src: url('../fonts/roboto/Roboto-MediumItalic.ttf') format('truetype');
+//     font-style: italic;
+//     font-weight: 500;
+//     text-rendering: optimizeLegibility;
+// }
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/roboto/Roboto-Bold.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 700;
+    text-rendering: optimizeLegibility;
+}
+
+// @font-face {
+//     font-family: 'Roboto';
+//     src: url('../fonts/roboto/Roboto-BoldItalic.ttf') format('truetype');
+//     font-style: italic;
+//     font-weight: 700;
+//     text-rendering: optimizeLegibility;
+// }
+@font-face {
     font-family: 'Roboto Mono';
     src: url('../fonts/robotoMono/RobotoMono-Thin.ttf') format('truetype');
     font-style: normal;
