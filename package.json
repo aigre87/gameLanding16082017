@@ -30,7 +30,6 @@
     "gulp-svg-sprites": "^4.0.2",
     "gulp-svgmin": "^1.2.3",
     "gulp-uglify": "^2.0.0",
-    "gulp-util": "^3.0.7",
     "gulp-watch": "^4.3.9",
     "gulp.spritesmith": "^6.2.1",
     "imagemin": "^5.2.2",

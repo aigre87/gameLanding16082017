@@ -32,9 +32,13 @@ body{
 	text-align: center;
 	overflow: hidden;
 	transition: all 0.3s ease-in-out;
+	position: relative;
 	.loaderContent{
+		position: absolute;
+		top: 50%;
+		left: 50%;
 		transform-origin: 50% 0%;
-		transform: scale(0);
+		transform: scale(0) translateY(-50%) translateX(-50%);
 		transition: all 0.3s ease-in-out;
 	}
 	.text{
@@ -49,6 +53,7 @@ body{
     height: 20px;
 		position: relative;
     z-index: 10;
+    margin-left: 5px;
     .loader-icon{
 	    left: 0;
 	    right: 0;
@@ -71,7 +76,7 @@ body{
 	&.load{
 		height: 60px;
 		.loaderContent{
-			transform: scale(1);
+			transform: scale(1) translateY(-50%) translateX(-50%);
 		}
 	}
 }
@@ -412,17 +417,20 @@ body{
 				width: 920px;
 				float: left;
 				font-size: 0;
-			  -webkit-column-count: 2;
-	   	  -moz-column-count: 2;
-		    column-count: 2;
-				&.initComplete{
-				  -webkit-column-count: normal;
-		   	  -moz-column-count: normal;
-			    column-count: normal;
-			    .news-item-lc { 
-						margin-left: 0px;
-						left: 0;
-			    }
+				.iw{
+					width: 100%;
+				  -webkit-column-count: 2;
+		   	  -moz-column-count: 2;
+			    column-count: 2;
+					&.initComplete{
+					  -webkit-column-count: normal;
+			   	  -moz-column-count: normal;
+				    column-count: normal;
+				    .news-item-lc { 
+							margin-left: 0px;
+							left: 0;
+				    }
+					}
 				}
 				.news-item-lc { 
 					display: inline-block;
@@ -437,7 +445,7 @@ body{
 					margin-bottom: 20px;
 					border-radius: 6px;
 					padding-top: 3px;
-					.prevImgBlock { 
+					.prevImgBlock {
 						width: 380px;
 						height: 229px;
 						margin: 18px auto 0;
@@ -446,6 +454,8 @@ body{
 						.item { 
 							width: 380px;
 							height: 229px;
+							display: block;
+							text-decoration: none;
 							img { 
 								position: absolute;
 								left: 50%;
@@ -453,6 +463,20 @@ body{
 								transform: translateX(-50%) translateY(-50%);
 								margin: auto;
 							}
+						}
+					}
+					.videoBlock{
+						width: 380px;
+						height: 214px;
+						margin: 18px auto 0;
+						overflow: hidden;
+						position: relative;
+						iframe{
+							position: absolute;
+							top: 0;
+							left: 0;
+							width: 100%;
+							height: 100%;
 						}
 					}
 
@@ -511,6 +535,31 @@ body{
 						text-decoration: none;
 						margin-top: -3px;
 						transition: all 0.15s ease;
+						cursor: pointer;
+						user-select: none;
+						&.loading{
+							cursor: default;
+							&:hover{
+								background: map-get($colors, red);
+								color: #fff;
+							}
+							&:after{
+								z-index: 1;
+								content: '';
+								position: absolute;
+								left: 50%;
+								top: 50%;
+								margin-left: -15px;
+								margin-top: -15px;
+						    border-radius: 100%;
+						    box-sizing: border-box;
+						    width: 30px;
+						    height: 30px;
+						    border: 5px solid #2f2d2d;
+						    border-bottom-color: map-get($colors, yellow);
+						    animation: rotate 1.2s linear 0s infinite;
+							}
+						}
 						.buttonText { 
 							
 						}
@@ -556,9 +605,14 @@ body{
 					}
 
 					.logo { 
-						@include sprite($s-gamescomNewsLogo);
+						width: 81px;
 						float: left;
 						margin-right: 7px;
+						img{
+							width: 100%;
+							height: auto;
+							display: block;
+						}
 					}
 
 					.name { 
@@ -673,3 +727,51 @@ body{
 	from{-webkit-transform:rotate(0);transform:rotate(0)}
 	to{-webkit-transform:rotate(360deg);transform:rotate(360deg)}
 }
+
+.newAjaxItem{
+	opacity: 0!important;
+	transform: translateY(20px);
+	transition: all 0.3s ease-in-out;
+	&.start{
+		opacity: 1!important;
+		transform: translateY(0px);
+	}
+}
+
+.defaultPopupContent{
+	font-size: 16px;
+	line-height: 20px;
+	font-family: "Roboto";
+	color: map-get($colors, text);
+  width: 1000px;
+  background: #fff;
+  margin: 40px auto;
+  padding: 60px 35px 40px;
+	.videoBlock{
+		position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+    height: 0;
+    iframe{
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    width: 100% !important;
+	    height: 100% !important;
+    }
+	}
+	.prevImgBlock{
+		max-height: 500px;
+		.owl-item{
+			max-height: 500px;
+			img{
+				max-height: 100%;
+				max-width: 100%;
+				height: auto;
+				width: auto;
+				margin: 0 auto;
+			}
+		}
+	}
+}
+

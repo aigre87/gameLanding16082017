@@ -15,6 +15,7 @@ var gulp        = require('gulp'),
     cache       = require('gulp-cache'),        // Подключаем библиотеку кеширования
     //sftp        = require('gulp-sftp'),
     spritesmith = require('gulp.spritesmith'),
+    gutil = require('gulp-util'),
     plumber     = require('gulp-plumber'),      // Ловим ошибки, чтобы не прервался watch
     svgSprite   = require('gulp-svg-sprite'),
     svgmin      = require('gulp-svgmin'),
@@ -61,7 +62,9 @@ gulp.task('js:build', function () {
         //.pipe(sourcemaps.init()) //Инициализируем sourcemap
         //.pipe(sourcemaps.write())
         .pipe(concat('main.min.js' , {newLine: ';'}))
+        .on('error', function (err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
         .pipe(uglify())
+        .on('error', function (err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
         .pipe(gulp.dest(path.build.js))
         .pipe(browserSync.stream())
         .pipe(plumber.stop());
@@ -81,11 +84,11 @@ gulp.task('libs:build', function() {
         'src/libsSrc/gsap/src/minified/plugins/ScrollToPlugin.min.js',
         'src/libsSrc/svg4everybody/dist/svg4everybody.min.js',
         'src/libs/masonry.js',
+        'src/libsSrc/moment/min/moment.min.js',
+        'src/libsSrc/jquery.countdown/dist/jquery.countdown.min.js',
+        'src/libs/all.js',
         'src/libsSrc/jquery.scrollbar/jquery.scrollbar.js',
         'src/libsSrc/scrollmagic/scrollmagic/minified/ScrollMagic.min.js',
-        'src/libsSrc/scrollmagic/scrollmagic/minified/plugins/jquery.ScrollMagic.min.js',
-        'src/libsSrc/scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js',
-        'src/libsSrc/scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min.js',
         'src/libsSrc/owl.carousel/dist/owl.carousel.min.js'
         ])
         .pipe(plumber())
