@@ -80,15 +80,11 @@ gulp.task('libs:build', function() {
     gulp.src([
         'src/libsSrc/jquery/dist/jquery.min.js', // Берем jQuery
         'src/libsSrc/magnific-popup/dist/jquery.magnific-popup.min.js', // Берем Magnific Popup
-        'src/libsSrc/gsap/src/minified/TweenMax.min.js',
-        'src/libsSrc/gsap/src/minified/plugins/ScrollToPlugin.min.js',
         'src/libsSrc/svg4everybody/dist/svg4everybody.min.js',
         'src/libs/masonry.js',
         'src/libsSrc/moment/min/moment.min.js',
         'src/libsSrc/jquery.countdown/dist/jquery.countdown.min.js',
         'src/libs/all.js',
-        'src/libsSrc/jquery.scrollbar/jquery.scrollbar.js',
-        'src/libsSrc/scrollmagic/scrollmagic/minified/ScrollMagic.min.js',
         'src/libsSrc/owl.carousel/dist/owl.carousel.min.js'
         ])
         .pipe(plumber())
