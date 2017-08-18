@@ -78,7 +78,6 @@
 
 	function noteDetail(){
 		$("body").on("click", ".news-item-lc:not(.newAjaxItem) .name, .news-item-lc.newAjaxItem.start .name", function(){
-			console.log("WW");
 			var $thisName = $(this),
 					$thisItem = $thisName.closest(".news-item-lc");
 
@@ -106,7 +105,6 @@
 						var $thisDetailContent = "<div class='prevImgBlock owl-carousel'>";
 						$thisItem.find(".prevImgBlock img").each(function(){
 							$thisDetailContent += $(this)[0].outerHTML;
-							console.log($(this)[0].outerHTML);
 						});
 						$thisDetailContent += "</div>";
 
@@ -126,6 +124,7 @@
 
 												$(".defaultPopupContent .prevImgBlock").each(function(){
 													var $this = $(this);
+													$this.find("img").removeClass("cover_ww cover_wh");
 													$this.owlCarousel({
 												    loop: true,
 												    items: 1,
@@ -574,7 +573,7 @@
 	});
 
 	$(window).on("load", function(){
-		imageCover($('.item img.imgCover'));
+		imageCover($('#lp_gamescom .item img.imgCover'));
 	});
 
 

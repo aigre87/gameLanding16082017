@@ -491,6 +491,14 @@ body{
 				    text-transform: uppercase;
 				    line-height: 35px;
 				    margin-top: 14px;
+				    transition: color 0.15s ease-in-out;
+					}
+					.prevImgBlock~.name,
+					.videoBlock~.name{
+						cursor: pointer;
+						&:hover{
+							color: map-get($colors, red);
+						}	
 					}
 
 					.text { 
