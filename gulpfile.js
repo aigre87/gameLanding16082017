@@ -85,7 +85,8 @@ gulp.task('libs:build', function() {
         'src/libsSrc/moment/min/moment.min.js',
         'src/libsSrc/jquery.countdown/dist/jquery.countdown.min.js',
         'src/libs/all.js',
-        'src/libsSrc/owl.carousel/dist/owl.carousel.min.js'
+        'src/libsSrc/owl.carousel/dist/owl.carousel.min.js',
+        'src/libsSrc/imagesloaded/imagesloaded.pkgd.js'
         ])
         .pipe(plumber())
         .pipe(concat('libs.min.js')) // Собираем их в кучу в новом файле libs.min.js
