@@ -1,8 +1,8 @@
 @font-face{
     font-family: 'Gotham Ultra';
-    src: url('../fonts/gothamUltra/Gotham-Ultra.eot');
-    src: url('../fonts/gothamUltra/Gotham-Ultra.eot') format('embedded-opentype'),
-         url('../fonts/gothamUltra/Gotham-Ultra.woff') format('woff'),
-         url('../fonts/gothamUltra/Gotham-Ultra.ttf') format('truetype'),
-         url('../fonts/gothamUltra/Gotham-Ultra.svg') format('svg');
+    src: url('../fonts/gothamUltra/Gotham Ultra.eot');
+    src: url('../fonts/gothamUltra/Gotham Ultra.eot') format('embedded-opentype'),
+         url('../fonts/gothamUltra/Gotham Ultra.woff') format('woff'),
+         url('../fonts/gothamUltra/Gotham Ultra.ttf') format('truetype'),
+         url('../fonts/gothamUltra/Gotham Ultra.svg') format('svg');
 }
